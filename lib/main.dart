@@ -64,8 +64,14 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 20,
                   ),
-                  additionalInformation("${data!.wind}", "${data!.feels_like}",
-                      "${data!.humidity}", "${data!.pressure}"),
+                  additionalInformation(
+                      "${data!.wind}",
+                      "${data!.feels_like}",
+                      "${data!.humidity}",
+                      "${data!.pressure}",
+                      "${data!.minTemperature}",
+                      "${data!.maxTemperature}",
+                      "${data!.visibility}"),
                   SizedBox(
                     height: 12,
                   ),
