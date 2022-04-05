@@ -45,37 +45,45 @@ class _HomePageState extends State<HomePage> {
           future: getData(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  currentWeather(
-                      Icons.sunny, "${data!.temperature}", "${data!.name}"),
-                  SizedBox(
-                    height: 20,
+              return SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 70,
+                      ),
+                      Text("Today"),
+                      currentWeather(
+                          Icons.sunny, "${data!.temperature}", "${data!.name}"),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "Detail Weather Information",
+                        style: TextStyle(
+                            fontSize: 24,
+                            color: Colors.amber,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Divider(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      additionalInformation(
+                        "${data!.wind}",
+                        "${data!.feels_like}",
+                        "${data!.humidity}",
+                        "${data!.pressure}",
+                        "${data!.minTemperature}",
+                        "${data!.maxTemperature}",
+                      ),
+                      SizedBox(
+                        height: 12,
+                      ),
+                    ],
                   ),
-                  Text(
-                    "Additional Information",
-                    style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.amber,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Divider(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  additionalInformation(
-                      "${data!.wind}",
-                      "${data!.feels_like}",
-                      "${data!.humidity}",
-                      "${data!.pressure}",
-                      "${data!.minTemperature}",
-                      "${data!.maxTemperature}",
-                      "${data!.visibility}"),
-                  SizedBox(
-                    height: 12,
-                  ),
-                ],
+                ),
               );
             } else if (snapshot.connectionState == ConnectionState.waiting) {
               child:

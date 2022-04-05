@@ -11,7 +11,6 @@ class Weather {
   double? feels_like;
   int? pressure;
   String? name;
-  String? visibility;
 
   Weather(
       {required this.latitude,
@@ -22,7 +21,6 @@ class Weather {
       this.wind,
       this.humidity,
       this.feels_like,
-      this.visibility,
       this.name,
       this.pressure});
 
@@ -37,6 +35,5 @@ class Weather {
     name = json["name"];
     pressure = json["main"]["pressure"];
     maxTemperature = json["main"]["temp_max"];
-    visibility = json["visibility"];
   }
 }
