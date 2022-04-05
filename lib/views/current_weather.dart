@@ -15,7 +15,7 @@ Widget currentWeather(IconData icon, String temp, String location) {
           height: 19,
         ),
         Text(
-          "$temp",
+          "$temp °",
           style: TextStyle(fontSize: 46),
         ),
         SizedBox(

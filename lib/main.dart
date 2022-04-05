@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   currentWeather(
-                      Icons.sunny, "${data!.temperature} F", "Kathmandu"),
+                      Icons.sunny, "${data!.temperature}", "${data!.name}"),
                   SizedBox(
                     height: 20,
                   ),
@@ -64,8 +64,8 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 20,
                   ),
-                  additionalInformation(
-                      "${data!.wind}", "234", "adef", "feels 10"),
+                  additionalInformation("${data!.wind}", "${data!.feels_like}",
+                      "${data!.humidity}", "${data!.pressure}"),
                   SizedBox(
                     height: 12,
                   ),

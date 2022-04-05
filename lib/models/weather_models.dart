@@ -8,6 +8,7 @@ class Weather {
   int? humidity;
   double? feels_like;
   int? pressure;
+  String? name;
 
   Weather(
       {required this.latitude,
@@ -16,6 +17,7 @@ class Weather {
       this.wind,
       this.humidity,
       this.feels_like,
+      this.name,
       this.pressure});
 
   Weather.fromJson(Map<String, dynamic> json) {
@@ -25,6 +27,7 @@ class Weather {
     wind = json["wind"]["speed"];
     humidity = json["main"]["humidity"];
     feels_like = json["main"]["feels_like"];
+    name = json["name"];
     pressure = json["main"]["pressure"];
   }
 }
